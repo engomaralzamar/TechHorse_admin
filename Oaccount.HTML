@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Personal Account</title>
+  <link rel="stylesheet" href="Mproject.css">
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@2.0.1/dist/css/multi-select-tag.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <img src="" class="img1">
+      <span class="logo_name">TechHorse Projects</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="index.html">
+          <i class='bx bx-user'></i>
+          <span class="links_name">Personal Account</span>
+        </a>
+      </li>
+      <li>
+        <a href="Oaccount.html" class="active">
+          <i class='bx bx-user'></i>
+          <span class="links_name">Office Account</span>
+        </a>
+      </li>
+      <li>
+        <a href="MEgn.html">
+          <i class='bx bx-group'></i>
+          <span class="links_name">Specialists</span>
+        </a>
+      </li>
+      <li>
+        <a href="Mproject.html">
+          <i class='bx bx-list-ul'></i>
+          <span class="links_name">Offers</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="Ourprojects.html">
+          <i class='bx bx-menu'></i>
+          <span class="links_name">Our Projects</span>
+        </a>
+      </li>
+      <li class="log_out">
+        <a href="index.html">
+          <i class='bx bx-log-out'></i>
+          <span class="links_name">Log out</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Office Account</span>
+      </div>
+      <div class="search-box">
+        <input type="text" placeholder="Search...">
+        <i class='bx bx-search'></i>
+      </div>
+    </nav>
+    <!--To here for all pages-->
+
+    <div class="home-content">
+      <div class="Info-boxes">
+        <div class="Personal-info box">
+          <div class="personal-details">
+            <div class="inner">
+              <div class="container1">
+
+                <h1 class="title">Office Information</h1>
+                <form action="Oaccount.html" method="post" onsubmit="updateSelectedServices()">
+                  <!-- change where to send the form-data--->
+                  <h2 style="color:green"></h2>
+                  <h2 style="color:red"></h2>
+                  <div class="labels">
+                    <label>Office Name: </label>
+                    <input name="office_name" type="text" placeholder="Office Name " required>
+                  </div>
+                  <div class="labels">
+                    <label>Location: </label>
+                    <input name="office_location" type="text" placeholder="Office location" required>
+                  </div>
+                  <br>
+                  <label>Office services:</label>
+                  <h3 id="selectedServices"></h3>
+                  <br>
+                  <div class="labels">
+                    <label for="office_services">Edit the services: </label>
+                    <select id="office_services" name="office_services[]" multiple required>
+                      <option value="1">Service 1</option>
+                      <option value="2">Service 2</option>
+                      <option value="3">Service 3</option>
+                      <!-- Add more options here -->
+                    </select>
+                  </div>
+                  <div class="labels">
+                    <label>Manager name: </label>
+                    <input name="full_name" type="text" placeholder="Manager name" required>
+                  </div>
+
+                  <div class="labels">
+                    <label>Manager email: </label>
+                    <input name="email" type="email" placeholder="email" required>
+                  </div>
+                  <div>
+                    <input type="submit" value="Save" name="save" class="btn1">
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@2.0.1/dist/js/multi-select-tag.js"></script>
+  <script>
+    new MultiSelectTag('office_services'); // id for the select element
+
+    function updateSelectedServices() {
+      var selectedServices = document.getElementById('office_services').value;
+      document.getElementById('selectedServices').innerHTML = selectedServices.join(', ');
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>Offers</title>
+    <link rel="stylesheet" href="Mproject.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+.filter-box {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 2%;
+    gap: 10px;
+}
+
+.filter-row {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+}
+
+.select2-container {
+    width: 100% !important;
+    font-size: 14px; 
+}
+
+#dateFilter {
+    font-size: 12px; 
+    padding: 9px 8px;
+}
+
+#clearFiltersBtn {
+    font-size: 14px; 
+    padding: 6px 10px; 
+}
+
+#clearApprovedFiltersBtn {
+    font-size: 14px; 
+    padding: 6px 10px; 
+}
+</style>
+<body>
+<div class="sidebar">
+    <div class="logo-details">
+        <img src="" class="img1">
+        <span class="logo_name">TechHorse Projects</span>
+    </div>
+    <ul class="nav-links">
+        <li>
+            <a href="index.html">
+                <i class='bx bx-user' ></i>
+                <span class="links_name">Personal Account</span>
+            </a>
+        </li>
+        <li>
+            <a href="Oaccount.html">
+                <i class='bx bx-user' ></i>
+                <span class="links_name">Office Account</span>
+            </a>
+        </li>
+        <li>
+            <a href="MEgn.html" >
+                <i class='bx bx-group' ></i>
+                <span class="links_name">Specialists</span>
+            </a>
+        </li>
+        <li>
+            <a href="Mproject.html"  class="active">
+                <i class='bx bx-list-ul' ></i>
+                <span class="links_name">Offers</span>
+            </a>
+        </li>
+        <li>
+            <a href="Ourprojects.html">
+                <i class='bx bx-menu' ></i>
+                <span class="links_name">Our Projects</span>
+            </a>
+        </li>
+        <li class="log_out">
+            <a href="index.html">
+                <i class='bx bx-log-out'></i>
+                <span class="links_name">Log out</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<section class="home-section">
+    <nav>
+        <div class="sidebar-button">
+            <i class='bx bx-menu sidebarBtn'></i>
+            <span class="dashboard">Offerst</span>
+        </div>
+        <div class="search-box">
+            <input type="text" placeholder="Search...">
+            <i class='bx bx-search' ></i>
+        </div>
+    </nav>
+    <div class="home-content">
+        <div class="Info-boxes">
+            <div class="Personal-info box" style=" width: 99%; margin-left: 1%; padding: 11px 3px;">
+                <div style="margin-left: 2%;" class="title">Offers</div>
+                <div class="personal-details">
+                    <h2 style="color:green"></h2>
+                    <div class="inner">
+                        <section class="display-table">
+                            <div class="btn">
+                                <a href="Mnewproject.html"> New Project</a>
+                                <a href="Mprojectstatus.html">Rejected Projects</a>
+                            </div>
+                            <br>
+                            <div class="filter-box">
+                                <!-- Client Name Filter -->
+                                <div class="filter-row">
+                                    <label for="clientFilter">Client Name:</label>
+                                    <select id="clientFilter" multiple="multiple">
+                                        <!-- Client options will be added here -->
+                                    </select>
+                                </div>
+                                <!-- Services Filter -->
+                                <div class="filter-row">
+                                    <label for="servicesFilter">Services:</label>
+                                    <select id="servicesFilter" multiple="multiple">
+                                        <!-- Service options will be added here -->
+                                    </select>
+                                </div>
+                                <!-- Date Filter -->
+                                <div class="filter-row">
+                                    <label for="dateFilter">Date:</label>
+                                    <input type="text" id="dateFilter" placeholder="Filter by Status Date">
+                                </div>
+                                <!-- Offer Date Filter -->
+                                <div class="filter-row">
+                                    <label for="offerDateFilter">Offer Date:</label>
+                                    <input type="text" id="offerDateFilter" placeholder="Filter by Offer Date">
+                                </div>
+                                <div class="filter-row">
+                                    <button class="btn1" id="clearFiltersBtn">Clear Filters</button>
+                                </div>
+                            </div>
+                            <br><br>
+                            <table id="offersprojects">
+                                <thead>
+                                <tr>
+                                    <th>Project Name</th>
+                                    <th>Services</th>
+                                    <th>Documents</th>
+                                    <th>Description</th>
+                                    <th>Client name</th>
+                                    <th>Phone</th>
+                                    <th>Price offer</th>
+                                    <th>Comment</th>
+                                    <th>Offer date</th>
+                                    <th>Send</th>
+                                    <th>Status</th>
+                                    <th>Date</th>
+                                    <th>Participation</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>Project A</td>
+                                    <td>Service A</td>
+                                    <td><a style="color: darkred;" target="_blank" href="#">View</a></td>
+                                    <td>Description of Project A</td>
+                                    <td>Client A</td>
+                                    <td>123-456-7890</td>
+                                    <td><a style="color: darkred;" target="_blank" href="#">View</a></td>
+                                    <td>Comment for Project A</td>
+                                    <td>2024-05-22</td>
+                                    <td><button class="btn1">Send</button></td>
+                                    <td style="color: darkgreen;">Accepted</td>
+                                    <td>2024-05-20</td>
+                                    <td><button class="cancel-btn btn1" onclick="removeRow(this)">Cancel</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Project B</td>
+                                    <td>Service B</td>
+                                    <td><a style="color: darkred;" target="_blank" href="#">View</a></td>
+                                    <td>Description of Project B</td>
+                                    <td>Client B</td>
+                                    <td>987-654-3210</td>
+                                    <td><a style="color: darkred;" target="_blank" href="#">View</a></td>
+                                    <td>Comment for Project B</td>
+                                    <td>2024-05-21</td>
+                                    <td><button class="btn1">Send</button></td>
+                                    <td style="color: red;">Rejected</td>
+                                    <td>2024-05-19</td>
+                                    <td><button class="cancel-btn btn1" onclick="removeRow(this)">Cancel</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Project C</td>
+                                    <td>Service C</td>
+                                    <td><a style="color: darkred;" target="_blank" href="#">View</a></td>
+                                    <td>Description of Project C</td>
+                                    <td>Client C</td>
+                                    <td>111-222-3333</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td><button class="btn1">Send</button></td>
+                                    <td>---</td>
+                                    <td>---</td>
+                                    <td><button class="cancel-btn btn1" onclick="removeRow(this)">Cancel</button></td>
+                                </tr>
+                                </tbody>
+                                </table>
+                                <script>
+                                    function removeRow(button) {
+                                        // Find the row and remove it
+                                        var row = button.closest('tr');
+                                        row.remove();
+                                    }
+                                </script>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </body>
+    </html>
+    
+

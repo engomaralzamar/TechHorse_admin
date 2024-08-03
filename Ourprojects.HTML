@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>Our Projects</title>
+    <link rel="stylesheet" href="Mproject.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+    .filter-box {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 2%;
+        gap: 10px;
+    }
+
+    .filter-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .select2-container {
+        width: 100% !important;
+        font-size: 12px;
+    }
+
+    #dateFilter {
+        font-size: 12px;
+        padding: 9px 5px;
+    }
+
+    #clearFiltersBtn {
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+</style>
+<body>
+<div class="sidebar">
+    <div class="logo-details">
+        <img src="" class="img1">
+        <span class="logo_name">TechHorse Projects</span>
+    </div>
+    <ul class="nav-links">
+        <li>
+            <a href="index.html">
+                <i class='bx bx-user' ></i>
+                <span class="links_name">Personal Account</span>
+            </a>
+        </li>
+        <li>
+            <a href="Oaccount.html">
+                <i class='bx bx-user' ></i>
+                <span class="links_name">Office Account</span>
+            </a>
+        </li>
+        <li>
+            <a href="MEgn.html">
+                <i class='bx bx-group' ></i>
+                <span class="links_name">Specialists</span>
+            </a>
+        </li>
+        <li>
+            <a href="Mproject.html" class="active">
+                <i class='bx bx-list-ul' ></i>
+                <span class="links_name">Offers</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="Ourprojects.html" class="active">
+                <i class='bx bx-menu' ></i>
+                <span class="links_name">Our Projects</span>
+            </a>
+        </li>
+        <li class="log_out">
+            <a href="index.html">
+                <i class='bx bx-log-out'></i>
+                <span class="links_name">Log out</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<section class="home-section">
+    <nav>
+        <div class="sidebar-button">
+            <i class='bx bx-menu sidebarBtn'></i>
+            <span class="dashboard"> Our Projects</span>
+        </div>
+        <div class="search-box">
+            <input type="text" placeholder="Search...">
+            <i class='bx bx-search' ></i>
+        </div>
+    </nav>
+    <!--To here for all pages-->
+    <div class="home-content">
+        <div class="Info-boxes">
+            <div class="Personal-info box">
+                <div class="title">Our Projects</div>
+                <div class="personal-details">
+                    <div class="inner">
+                        <section class="display-table">
+                            <div class="filter-box">
+                                <div class="filter-row">
+                                    <label for="clientFilter">Client Name:</label>
+                                    <select id="clientFilter" multiple="multiple">
+                                        <option>Client 1</option>
+                                        <option>Client 2</option>
+                                        <option>Client 3</option>
+                                    </select>
+                                </div>
+                                <div class="filter-row">
+                                    <label for="servicesFilter">Stage:</label>
+                                    <select id="servicesFilter" multiple="multiple">
+                                        <option>Not Started</option>
+                                        <option>In Progress</option>
+                                        <option>Done</option>
+                                    </select>
+                                </div>
+
+                                <div class="filter-row">
+                                    <label for="dateFilter">Date:</label>
+                                    <input type="text" id="dateFilter" placeholder="Filter by Date">
+                                </div>
+
+                                <div class="filter-row">
+                                    <button class="btn1" id="clearFiltersBtn">Clear Filters</button>
+                                </div>
+                            </div>
+                            <br>
+                            <table id="projects">
+                                <thead>
+                                <tr>
+                                    <th>Project Name</th>
+                                    <th>Client name</th>
+                                    <th>Client phone</th>
+                                    <th>Accept date</th>
+                                    <th>Stage</th>
+                                    <th>Action</th>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+                                <tr>
+                                    <td>Project 1</td>
+                                    <td>Client 1</td>
+                                    <td>1234567890</td>
+                                    <td>2024-05-20</td>
+                                    <td>In Progress</td>
+                                    <td><a href="ProjecTManagement.html?project_id=1"><span>Workspace</span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>Project 2</td>
+                                    <td>Client 2</td>
+                                    <td>0987654321</td>
+                                    <td>2024-05-21</td>
+                                    <td>Not Started</td>
+                                    <td><a href="ProjecTManagement.html?project_id=2"><span>Workspace</span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>Project 3</td>
+                                    <td>Client 3</td>
+                                    <td>1357924680</td>
+                                    <td>2024-05-22</td>
+                                    <td>Done</td>
+                                    <td><a href="ProjecTManagement.html?project_id=3"><span>Workspace</span></a></td>
+                                </tr>
+                                </tbody>
+
+                            </table>
+                            <script>
+                                $(document).ready(function () {
+                                    flatpickr("#dateFilter", {
+                                        dateFormat: "Y-m-d",
+                                    });
+
+                                    $("#servicesFilter").select2({
+                                        placeholder: "Filter by Stage",
+                                        tags: true,
+                                        tokenSeparators: [','],
+                                    });
+
+                                    $("#clientFilter").select2({
+                                        placeholder: "Filter by Client Name",
+                                        tags: true,
+                                        tokenSeparators: [','],
+                                    });
+
+                                    $("#clientFilter").on("change", function () {
+                                        var selectedClients = $(this).val();
+                                        $("#projects tbody tr").hide();
+
+                                        if (selectedClients && selectedClients.length > 0) {
+                                            $.each(selectedClients, function (index, client) {
+                                                $("#projects tbody tr:contains('" + client + "')").show();
+                                            });
+                                        } else {
+                                            $("#projects tbody tr").show();
+                                        }
+                                    });
+
+                                    $("#servicesFilter").on("change", function () {
+                                        var selectedServices = $(this).val();
+                                        applyFilters(null, selectedServices);
+                                    });
+
+                                    // Date filter
+                                    $("#dateFilter").on("change", function () {
+                                        var selectedDate = $(this).val();
+
+                                        // If a date is selected, convert it to YYYY-MM-DD format for comparison
+                                        var formattedDate = selectedDate ? selectedDate : '';
+
+                                        $("#projects tbody tr").hide();
+
+                                        if (formattedDate) {
+                                            // Show rows that have an offer date equal to the selected date
+                                            $("#projects tbody tr:has(td:nth-child(4):contains('" + formattedDate + "'))").show();
+                                        } else {
+                                            $("#projects tbody tr").show();
+                                        }
+                                    });
+
+                                    $("#clearFiltersBtn").on("click", function () {
+                                        $("#servicesFilter,#clientFilter,#dateFilter").val(null).trigger("change");
+                                        $("#dateFilter").val("");
+                                        $("#projects tbody tr").show();
+                                    });
+
+                                    function applyFilters(selectedDate, selectedServices) {
+                                        $("#projects tbody tr").each(function () {
+                                            var row = $(this);
+                                            var rowDate = row.find('td:eq(3)').text().trim();
+                                            var rowServices = row.find('td:eq(4)').text();
+                                            var servicesArray = rowServices.split(',').map(function (item) {
+                                                return item.trim();
+                                            });
+
+                                            var dateMatch = !selectedDate || rowDate === selectedDate;
+                                            var servicesMatch = selectedServices.length === 0 || selectedServices.some(function (service) {
+                                                return servicesArray.includes(service);
+                                            });
+
+                                            if (dateMatch && servicesMatch) {
+                                                row.show();
+                                            } else {
+                                                row.hide();
+                                            }
+                                        });
+                                    }
+
+                                    applyFilters();
+                                });
+                            </script>
+
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>
